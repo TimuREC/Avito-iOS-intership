@@ -7,23 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE245E7825A0AD33007527EA /* ActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE245E7725A0AD33007527EA /* ActionsConfigurator.swift */; };
+		FE245E7C25A0B825007527EA /* Network Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE245E7B25A0B825007527EA /* Network Service.swift */; };
+		FE6A0E4225A32E6C00AA2DC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6A0E4025A32E6C00AA2DC5 /* Main.storyboard */; };
+		FE6A0E4825A3415400AA2DC5 /* ActionsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A0E4725A3415400AA2DC5 /* ActionsEntity.swift */; };
+		FE6A0E4B25A3443400AA2DC5 /* GetActionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A0E4A25A3443400AA2DC5 /* GetActionsService.swift */; };
 		FEB15F4D259A35C900A33232 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F4C259A35C900A33232 /* AppDelegate.swift */; };
 		FEB15F4F259A35C900A33232 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F4E259A35C900A33232 /* SceneDelegate.swift */; };
-		FEB15F51259A35C900A33232 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F50259A35C900A33232 /* ViewController.swift */; };
-		FEB15F54259A35C900A33232 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEB15F52259A35C900A33232 /* Main.storyboard */; };
 		FEB15F56259A35CA00A33232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEB15F55259A35CA00A33232 /* Assets.xcassets */; };
 		FEB15F59259A35CA00A33232 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEB15F57259A35CA00A33232 /* LaunchScreen.storyboard */; };
+		FEB15F64259A5D3A00A33232 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F63259A5D3A00A33232 /* ActionCell.swift */; };
+		FEB15F68259A7A9B00A33232 /* ActionsCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F67259A7A9B00A33232 /* ActionsCollectionHeaderView.swift */; };
+		FEB15F71259E5FEF00A33232 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F70259E5FEF00A33232 /* ActionsViewController.swift */; };
+		FEB15F76259E603000A33232 /* ActionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F75259E603000A33232 /* ActionsRouter.swift */; };
+		FEB15F79259E605D00A33232 /* ActionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F78259E605D00A33232 /* ActionsContainer.swift */; };
+		FEB15F7C259E606800A33232 /* ActionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F7B259E606800A33232 /* ActionsInteractor.swift */; };
+		FEB15F7F259E607700A33232 /* ActionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F7E259E607700A33232 /* ActionsPresenter.swift */; };
+		FEB15F82259E609200A33232 /* ActionsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F81259E609200A33232 /* ActionsProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE245E7725A0AD33007527EA /* ActionsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsConfigurator.swift; sourceTree = "<group>"; };
+		FE245E7B25A0B825007527EA /* Network Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network Service.swift"; sourceTree = "<group>"; };
+		FE6A0E4125A32E6C00AA2DC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE6A0E4725A3415400AA2DC5 /* ActionsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsEntity.swift; sourceTree = "<group>"; };
+		FE6A0E4A25A3443400AA2DC5 /* GetActionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActionsService.swift; sourceTree = "<group>"; };
 		FEB15F49259A35C900A33232 /* Avito iOS intership.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Avito iOS intership.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEB15F4C259A35C900A33232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEB15F4E259A35C900A33232 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FEB15F50259A35C900A33232 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FEB15F53259A35C900A33232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FEB15F55259A35CA00A33232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEB15F58259A35CA00A33232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEB15F5A259A35CA00A33232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEB15F63259A5D3A00A33232 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
+		FEB15F67259A7A9B00A33232 /* ActionsCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsCollectionHeaderView.swift; sourceTree = "<group>"; };
+		FEB15F70259E5FEF00A33232 /* ActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
+		FEB15F75259E603000A33232 /* ActionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsRouter.swift; sourceTree = "<group>"; };
+		FEB15F78259E605D00A33232 /* ActionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsContainer.swift; sourceTree = "<group>"; };
+		FEB15F7B259E606800A33232 /* ActionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsInteractor.swift; sourceTree = "<group>"; };
+		FEB15F7E259E607700A33232 /* ActionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsPresenter.swift; sourceTree = "<group>"; };
+		FEB15F81259E609200A33232 /* ActionsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +59,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE245E7A25A0B7E1007527EA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FE245E7B25A0B825007527EA /* Network Service.swift */,
+				FE6A0E4A25A3443400AA2DC5 /* GetActionsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FE245E8025A0BC8E007527EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEB15F67259A7A9B00A33232 /* ActionsCollectionHeaderView.swift */,
+				FEB15F63259A5D3A00A33232 /* ActionCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FEB15F40259A35C900A33232 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +98,38 @@
 			children = (
 				FEB15F4C259A35C900A33232 /* AppDelegate.swift */,
 				FEB15F4E259A35C900A33232 /* SceneDelegate.swift */,
-				FEB15F50259A35C900A33232 /* ViewController.swift */,
-				FEB15F52259A35C900A33232 /* Main.storyboard */,
+				FEB15F6E259E5D8000A33232 /* Modules */,
+				FE6A0E4725A3415400AA2DC5 /* ActionsEntity.swift */,
 				FEB15F55259A35CA00A33232 /* Assets.xcassets */,
+				FE6A0E4025A32E6C00AA2DC5 /* Main.storyboard */,
 				FEB15F57259A35CA00A33232 /* LaunchScreen.storyboard */,
 				FEB15F5A259A35CA00A33232 /* Info.plist */,
 			);
 			path = "Avito iOS intership";
+			sourceTree = "<group>";
+		};
+		FEB15F6E259E5D8000A33232 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FE245E7A25A0B7E1007527EA /* Services */,
+				FEB15F6F259E5D9800A33232 /* ActionsModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FEB15F6F259E5D9800A33232 /* ActionsModule */ = {
+			isa = PBXGroup;
+			children = (
+				FEB15F78259E605D00A33232 /* ActionsContainer.swift */,
+				FEB15F7B259E606800A33232 /* ActionsInteractor.swift */,
+				FEB15F7E259E607700A33232 /* ActionsPresenter.swift */,
+				FEB15F81259E609200A33232 /* ActionsProtocols.swift */,
+				FEB15F75259E603000A33232 /* ActionsRouter.swift */,
+				FEB15F70259E5FEF00A33232 /* ActionsViewController.swift */,
+				FE245E7725A0AD33007527EA /* ActionsConfigurator.swift */,
+				FE245E8025A0BC8E007527EA /* Views */,
+			);
+			path = ActionsModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +189,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE6A0E4225A32E6C00AA2DC5 /* Main.storyboard in Resources */,
 				FEB15F59259A35CA00A33232 /* LaunchScreen.storyboard in Resources */,
 				FEB15F56259A35CA00A33232 /* Assets.xcassets in Resources */,
-				FEB15F54259A35C900A33232 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +202,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEB15F51259A35C900A33232 /* ViewController.swift in Sources */,
+				FEB15F68259A7A9B00A33232 /* ActionsCollectionHeaderView.swift in Sources */,
+				FE245E7C25A0B825007527EA /* Network Service.swift in Sources */,
+				FEB15F64259A5D3A00A33232 /* ActionCell.swift in Sources */,
+				FEB15F76259E603000A33232 /* ActionsRouter.swift in Sources */,
+				FE6A0E4B25A3443400AA2DC5 /* GetActionsService.swift in Sources */,
 				FEB15F4D259A35C900A33232 /* AppDelegate.swift in Sources */,
+				FEB15F79259E605D00A33232 /* ActionsContainer.swift in Sources */,
+				FEB15F7F259E607700A33232 /* ActionsPresenter.swift in Sources */,
+				FEB15F82259E609200A33232 /* ActionsProtocols.swift in Sources */,
+				FE245E7825A0AD33007527EA /* ActionsConfigurator.swift in Sources */,
+				FEB15F7C259E606800A33232 /* ActionsInteractor.swift in Sources */,
+				FEB15F71259E5FEF00A33232 /* ActionsViewController.swift in Sources */,
+				FE6A0E4825A3415400AA2DC5 /* ActionsEntity.swift in Sources */,
 				FEB15F4F259A35C900A33232 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,10 +222,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FEB15F52259A35C900A33232 /* Main.storyboard */ = {
+		FE6A0E4025A32E6C00AA2DC5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FEB15F53259A35C900A33232 /* Base */,
+				FE6A0E4125A32E6C00AA2DC5 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -289,6 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZZ5827BGY;
 				INFOPLIST_FILE = "Avito iOS intership/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +373,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "t.begishev.Avito-iOS-intership";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +385,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QZZ5827BGY;
 				INFOPLIST_FILE = "Avito iOS intership/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "t.begishev.Avito-iOS-intership";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
