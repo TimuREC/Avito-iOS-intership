@@ -16,8 +16,7 @@ class ActionsInteractor: ActionsInteractorProtocol {
     }
     
     func getActions() -> Actions? {
-        return GetActionsService.shared.getActions()
+        return GetActionsService.shared.getActionsFromAssets()
     }
-    
-    
+
 }

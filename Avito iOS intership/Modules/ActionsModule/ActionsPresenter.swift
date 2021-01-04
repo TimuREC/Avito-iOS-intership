@@ -23,7 +23,8 @@ class ActionsPresenter: ActionsPresenterProtocol {
             action.isSelected = false
             view.actions.append(action)
         }
-        
+        view.actionsHeader = actions.result.title
+        view.actionButtonStates = (actions.result.actionTitle, actions.result.selectedActionTitle)
         view.setupCloseButton()
         view.setupActionsCollection()
         view.setupActionButton()
@@ -36,7 +37,6 @@ class ActionsPresenter: ActionsPresenterProtocol {
     func actionButtonClicked() {
         if let index = view.selected {
             router.applyAction(view.actions[index])
-            view.showAction(with: index)
         } else {
             router.nextViewController()
         }

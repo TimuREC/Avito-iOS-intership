@@ -5,9 +5,6 @@
 //  Created by Timur Begishev on 04.01.2021.
 //
 
-// To parse the JSON, add this file to your project and do:
-//   let actions = try? newJSONDecoder().decode(Actions.self, from: jsonData)
-
 import Foundation
 
 // MARK: - Actions

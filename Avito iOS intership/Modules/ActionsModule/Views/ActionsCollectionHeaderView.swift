@@ -14,7 +14,6 @@ class ActionsCollectionHeaderView: UICollectionReusableView {
     let label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Сделайте объявление заметнее на 7 дней"
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 22)
         label.numberOfLines = 0
         return label
@@ -26,7 +25,6 @@ class ActionsCollectionHeaderView: UICollectionReusableView {
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         label.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
         label.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor, constant: -15).isActive = true
-        
         
     }
     

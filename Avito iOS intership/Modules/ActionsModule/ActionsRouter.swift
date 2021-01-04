@@ -21,12 +21,11 @@ class ActionsRouter: ActionsRouterProtocol {
     }
     
     func nextViewController() {
-        print("Action button clicked, open next screen")
-        
+        print("No action was selected")
     }
     
     func applyAction(_ action: Action) {
-        print("\(action.title)")
+        viewController.showAction(action)
     }
     
 }

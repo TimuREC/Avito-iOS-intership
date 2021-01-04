@@ -19,7 +19,6 @@
 		FEB15F68259A7A9B00A33232 /* ActionsCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F67259A7A9B00A33232 /* ActionsCollectionHeaderView.swift */; };
 		FEB15F71259E5FEF00A33232 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F70259E5FEF00A33232 /* ActionsViewController.swift */; };
 		FEB15F76259E603000A33232 /* ActionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F75259E603000A33232 /* ActionsRouter.swift */; };
-		FEB15F79259E605D00A33232 /* ActionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F78259E605D00A33232 /* ActionsContainer.swift */; };
 		FEB15F7C259E606800A33232 /* ActionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F7B259E606800A33232 /* ActionsInteractor.swift */; };
 		FEB15F7F259E607700A33232 /* ActionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F7E259E607700A33232 /* ActionsPresenter.swift */; };
 		FEB15F82259E609200A33232 /* ActionsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB15F81259E609200A33232 /* ActionsProtocols.swift */; };
@@ -40,7 +39,6 @@
 		FEB15F67259A7A9B00A33232 /* ActionsCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsCollectionHeaderView.swift; sourceTree = "<group>"; };
 		FEB15F70259E5FEF00A33232 /* ActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
 		FEB15F75259E603000A33232 /* ActionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsRouter.swift; sourceTree = "<group>"; };
-		FEB15F78259E605D00A33232 /* ActionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsContainer.swift; sourceTree = "<group>"; };
 		FEB15F7B259E606800A33232 /* ActionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsInteractor.swift; sourceTree = "<group>"; };
 		FEB15F7E259E607700A33232 /* ActionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsPresenter.swift; sourceTree = "<group>"; };
 		FEB15F81259E609200A33232 /* ActionsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsProtocols.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		FEB15F6F259E5D9800A33232 /* ActionsModule */ = {
 			isa = PBXGroup;
 			children = (
-				FEB15F78259E605D00A33232 /* ActionsContainer.swift */,
 				FEB15F7B259E606800A33232 /* ActionsInteractor.swift */,
 				FEB15F7E259E607700A33232 /* ActionsPresenter.swift */,
 				FEB15F81259E609200A33232 /* ActionsProtocols.swift */,
@@ -196,7 +193,6 @@
 				FEB15F76259E603000A33232 /* ActionsRouter.swift in Sources */,
 				FE6A0E4B25A3443400AA2DC5 /* GetActionsService.swift in Sources */,
 				FEB15F4D259A35C900A33232 /* AppDelegate.swift in Sources */,
-				FEB15F79259E605D00A33232 /* ActionsContainer.swift in Sources */,
 				FEB15F7F259E607700A33232 /* ActionsPresenter.swift in Sources */,
 				FEB15F82259E609200A33232 /* ActionsProtocols.swift in Sources */,
 				FE245E7825A0AD33007527EA /* ActionsConfigurator.swift in Sources */,

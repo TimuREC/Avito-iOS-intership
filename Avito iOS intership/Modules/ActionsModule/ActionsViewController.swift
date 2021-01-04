@@ -17,6 +17,8 @@ class ActionsViewController: UIViewController, ActionsViewProtocol {
     let actionButton = UIButton()
     
     var actions = [Action]()
+    var actionsHeader: String?
+    var actionButtonStates: (String, String)?
     var lastSelected: Int?
     var selected: Int?
     
@@ -24,16 +26,6 @@ class ActionsViewController: UIViewController, ActionsViewProtocol {
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter.configureView()
-    }
-    
-    @objc
-    func closeButtonClicked() {
-        presenter.closeButtonClicked()
-    }
-    
-    @objc
-    func actionButtonClicked() {
-        presenter.actionButtonClicked()
     }
     
     override func loadView() {
@@ -46,8 +38,18 @@ class ActionsViewController: UIViewController, ActionsViewProtocol {
         return true
     }
     
-    func showAction(with index: Int) {
-        let alert = UIAlertController(title: actions[index].title, message: nil, preferredStyle: .alert)
+    @objc
+    func closeButtonClicked() {
+        presenter.closeButtonClicked()
+    }
+    
+    @objc
+    func actionButtonClicked() {
+        presenter.actionButtonClicked()
+    }
+    
+    func showAction(_ action: Action) {
+        let alert = UIAlertController(title: action.title, message: nil, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
@@ -57,7 +59,21 @@ class ActionsViewController: UIViewController, ActionsViewProtocol {
 }
 
 extension ActionsViewController: UICollectionViewDelegateFlowLayout {
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let index = lastSelected {
+            if index != indexPath.item {
+                actions[index].isSelected = false
+            } else {
+                selected = nil
+            }
+        }
+        lastSelected = indexPath.item
+        actions[indexPath.item].isSelected.toggle()
+        selected = actions[indexPath.item].isSelected ? indexPath.item : nil
+        updateActionButton()
+        collectionView.reloadData()
+    }
 }
 
 extension ActionsViewController: UICollectionViewDataSource {
@@ -69,6 +85,7 @@ extension ActionsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard kind == UICollectionView.elementKindSectionHeader else { fatalError() }
         guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ActionsCollectionHeaderView.reuseId, for: indexPath) as? ActionsCollectionHeaderView else { fatalError() }
+        headerView.label.text = actionsHeader
         return headerView
     }
     
@@ -88,21 +105,6 @@ extension ActionsViewController: UICollectionViewDataSource {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let index = lastSelected {
-            if index != indexPath.item {
-                actions[index].isSelected = false
-            } else {
-                selected = nil
-            }
-        }
-        lastSelected = indexPath.item
-        actions[indexPath.item].isSelected.toggle()
-        selected = actions[indexPath.item].isSelected ? indexPath.item : nil
-        
-        collectionView.reloadData()
-    }
-    
 }
 
 extension ActionsViewController {
@@ -111,7 +113,8 @@ extension ActionsViewController {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.setImage(UIImage(named: "CloseIconTemplate"), for: .normal)
         view.addSubview(closeButton)
-        closeButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeButtonClicked)))
+//        Закомментировано, так как по условию - крестик не кликабельный
+//        closeButton.addTarget(self, action: #selector(closeButtonClicked), for: .touchUpInside)
         
         closeButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         closeButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
@@ -126,7 +129,6 @@ extension ActionsViewController {
         layout.headerReferenceSize = CGSize(width: (UIScreen.main.bounds.size.width - 20), height: 100)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 20, height: 150)
         
-        
         actionsCollection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         actionsCollection.translatesAutoresizingMaskIntoConstraints = false
         actionsCollection.backgroundColor = .white
@@ -139,6 +141,7 @@ extension ActionsViewController {
         actionsCollection.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 5).isActive = true
         actionsCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         actionsCollection.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 75, right: 0)
+        actionsCollection.alwaysBounceVertical = true
         
         actionsCollection.delegate = self
         actionsCollection.dataSource = self
@@ -146,18 +149,30 @@ extension ActionsViewController {
     
     func setupActionButton() {
         actionButton.translatesAutoresizingMaskIntoConstraints = false
-        actionButton.backgroundColor = #colorLiteral(red: 0, green: 0.6762664914, blue: 1, alpha: 1)
         actionButton.layer.cornerRadius = 5
-        actionButton.setTitle("Выбрать", for: .normal)
         actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        actionButton.setTitleColor(.white, for: .normal)
+        updateActionButton()
         view.addSubview(actionButton)
-        actionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(actionButtonClicked)))
+        actionButton.addTarget(self, action: #selector(actionButtonClicked), for: .touchUpInside)
         
         actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
         actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15).isActive = true
         actionButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+    }
+    
+    private func updateActionButton() {
+        if let actionButtonStates = actionButtonStates {
+            if selected != nil {
+                actionButton.backgroundColor = #colorLiteral(red: 0, green: 0.6762664914, blue: 1, alpha: 1)
+                actionButton.setTitle(actionButtonStates.1, for: .normal)
+                actionButton.setTitleColor(.white, for: .normal)
+            } else {
+                actionButton.backgroundColor = #colorLiteral(red: 0.9421952963, green: 0.9813895822, blue: 0.9980943799, alpha: 1)
+                actionButton.setTitle(actionButtonStates.0, for: .normal)
+                actionButton.setTitleColor(.systemBlue, for: .normal)
+            }
+        }
     }
     
 }
