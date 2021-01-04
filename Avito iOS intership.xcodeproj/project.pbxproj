@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FE245E7825A0AD33007527EA /* ActionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE245E7725A0AD33007527EA /* ActionsConfigurator.swift */; };
-		FE245E7C25A0B825007527EA /* Network Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE245E7B25A0B825007527EA /* Network Service.swift */; };
 		FE6A0E4225A32E6C00AA2DC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6A0E4025A32E6C00AA2DC5 /* Main.storyboard */; };
 		FE6A0E4825A3415400AA2DC5 /* ActionsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A0E4725A3415400AA2DC5 /* ActionsEntity.swift */; };
 		FE6A0E4B25A3443400AA2DC5 /* GetActionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A0E4A25A3443400AA2DC5 /* GetActionsService.swift */; };
@@ -28,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		FE245E7725A0AD33007527EA /* ActionsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsConfigurator.swift; sourceTree = "<group>"; };
-		FE245E7B25A0B825007527EA /* Network Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Network Service.swift"; sourceTree = "<group>"; };
 		FE6A0E4125A32E6C00AA2DC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE6A0E4725A3415400AA2DC5 /* ActionsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsEntity.swift; sourceTree = "<group>"; };
 		FE6A0E4A25A3443400AA2DC5 /* GetActionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetActionsService.swift; sourceTree = "<group>"; };
@@ -59,15 +57,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE245E7A25A0B7E1007527EA /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				FE245E7B25A0B825007527EA /* Network Service.swift */,
-				FE6A0E4A25A3443400AA2DC5 /* GetActionsService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		FE245E8025A0BC8E007527EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +89,7 @@
 				FEB15F4E259A35C900A33232 /* SceneDelegate.swift */,
 				FEB15F6E259E5D8000A33232 /* Modules */,
 				FE6A0E4725A3415400AA2DC5 /* ActionsEntity.swift */,
+				FE6A0E4A25A3443400AA2DC5 /* GetActionsService.swift */,
 				FEB15F55259A35CA00A33232 /* Assets.xcassets */,
 				FE6A0E4025A32E6C00AA2DC5 /* Main.storyboard */,
 				FEB15F57259A35CA00A33232 /* LaunchScreen.storyboard */,
@@ -111,7 +101,6 @@
 		FEB15F6E259E5D8000A33232 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				FE245E7A25A0B7E1007527EA /* Services */,
 				FEB15F6F259E5D9800A33232 /* ActionsModule */,
 			);
 			path = Modules;
@@ -203,7 +192,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEB15F68259A7A9B00A33232 /* ActionsCollectionHeaderView.swift in Sources */,
-				FE245E7C25A0B825007527EA /* Network Service.swift in Sources */,
 				FEB15F64259A5D3A00A33232 /* ActionCell.swift in Sources */,
 				FEB15F76259E603000A33232 /* ActionsRouter.swift in Sources */,
 				FE6A0E4B25A3443400AA2DC5 /* GetActionsService.swift in Sources */,

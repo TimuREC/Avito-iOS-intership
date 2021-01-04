@@ -13,6 +13,8 @@ protocol ActionsConfiguratorProtocol: class {
 protocol ActionsRouterProtocol: class {
     func closeCurrentViewController()
     func nextViewController()
+    func applyAction(_ action: Action)
+    
 }
 
 protocol ActionsPresenterProtocol: class {
@@ -24,9 +26,11 @@ protocol ActionsPresenterProtocol: class {
 
 protocol ActionsViewProtocol: class {
     var actions: [Action] { get set }
+    var selected: Int? { get set }
     func setupCloseButton()
     func setupActionsCollection()
     func setupActionButton()
+    func showAction(with index: Int)
 }
 
 protocol ActionsInteractorProtocol: class {

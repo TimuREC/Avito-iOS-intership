@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ActionsRouter: ActionsRouterProtocol {
     
@@ -21,7 +22,11 @@ class ActionsRouter: ActionsRouterProtocol {
     
     func nextViewController() {
         print("Action button clicked, open next screen")
-        // Make UIAlert
+        
+    }
+    
+    func applyAction(_ action: Action) {
+        print("\(action.title)")
     }
     
 }

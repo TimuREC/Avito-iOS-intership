@@ -17,6 +17,8 @@ class ActionsViewController: UIViewController, ActionsViewProtocol {
     let actionButton = UIButton()
     
     var actions = [Action]()
+    var lastSelected: Int?
+    var selected: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +26,12 @@ class ActionsViewController: UIViewController, ActionsViewProtocol {
         presenter.configureView()
     }
     
-    func setActionsCollection() {
-        
-    }
-    
+    @objc
     func closeButtonClicked() {
         presenter.closeButtonClicked()
     }
     
+    @objc
     func actionButtonClicked() {
         presenter.actionButtonClicked()
     }
@@ -45,15 +45,19 @@ class ActionsViewController: UIViewController, ActionsViewProtocol {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    func showAction(with index: Int) {
+        let alert = UIAlertController(title: actions[index].title, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
 
 }
 
 extension ActionsViewController: UICollectionViewDelegateFlowLayout {
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 100, height: 100)
-//    }
-    
+
 }
 
 extension ActionsViewController: UICollectionViewDataSource {
@@ -79,12 +83,24 @@ extension ActionsViewController: UICollectionViewDataSource {
         cell.cellTitle.text = actions[indexPath.item].title
         cell.cellDescription.text = actions[indexPath.item].listDescription
         cell.cellPrice.text = actions[indexPath.item].price
+        cell.cellCheckmark.isHidden = !actions[indexPath.item].isSelected
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let index = lastSelected {
+            if index != indexPath.item {
+                actions[index].isSelected = false
+            } else {
+                selected = nil
+            }
+        }
+        lastSelected = indexPath.item
+        actions[indexPath.item].isSelected.toggle()
+        selected = actions[indexPath.item].isSelected ? indexPath.item : nil
         
+        collectionView.reloadData()
     }
     
 }
@@ -95,6 +111,7 @@ extension ActionsViewController {
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.setImage(UIImage(named: "CloseIconTemplate"), for: .normal)
         view.addSubview(closeButton)
+        closeButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeButtonClicked)))
         
         closeButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         closeButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
@@ -108,7 +125,6 @@ extension ActionsViewController {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.headerReferenceSize = CGSize(width: (UIScreen.main.bounds.size.width - 20), height: 100)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 20, height: 150)
-        
         
         
         actionsCollection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -136,6 +152,7 @@ extension ActionsViewController {
         actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         actionButton.setTitleColor(.white, for: .normal)
         view.addSubview(actionButton)
+        actionButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(actionButtonClicked)))
         
         actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
         actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true

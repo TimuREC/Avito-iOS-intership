@@ -37,7 +37,7 @@ struct Action: Codable {
         }
     }
     let price: String
-    let isSelected: Bool
+    var isSelected: Bool
 
     enum CodingKeys: String, CodingKey {
         case id, title

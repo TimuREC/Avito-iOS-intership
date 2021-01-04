@@ -15,13 +15,15 @@ class ActionsPresenter: ActionsPresenterProtocol {
     
     required init(view: ActionsViewProtocol) {
         self.view = view
-        
     }
     
     func configureView() {
         guard let actions = interactor.getActions() else { return }
-        view.actions = actions.result.list
-//        print(actions)
+        for var action in actions.result.list where action.isSelected {
+            action.isSelected = false
+            view.actions.append(action)
+        }
+        
         view.setupCloseButton()
         view.setupActionsCollection()
         view.setupActionButton()
@@ -32,8 +34,12 @@ class ActionsPresenter: ActionsPresenterProtocol {
     }
     
     func actionButtonClicked() {
-        router.nextViewController()
+        if let index = view.selected {
+            router.applyAction(view.actions[index])
+            view.showAction(with: index)
+        } else {
+            router.nextViewController()
+        }
     }
-    
     
 }
