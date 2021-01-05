@@ -107,12 +107,12 @@
 		FEB15F6F259E5D9800A33232 /* ActionsModule */ = {
 			isa = PBXGroup;
 			children = (
-				FEB15F7B259E606800A33232 /* ActionsInteractor.swift */,
-				FEB15F7E259E607700A33232 /* ActionsPresenter.swift */,
+				FE245E7725A0AD33007527EA /* ActionsConfigurator.swift */,
 				FEB15F81259E609200A33232 /* ActionsProtocols.swift */,
 				FEB15F75259E603000A33232 /* ActionsRouter.swift */,
+				FEB15F7B259E606800A33232 /* ActionsInteractor.swift */,
+				FEB15F7E259E607700A33232 /* ActionsPresenter.swift */,
 				FEB15F70259E5FEF00A33232 /* ActionsViewController.swift */,
-				FE245E7725A0AD33007527EA /* ActionsConfigurator.swift */,
 				FE245E8025A0BC8E007527EA /* Views */,
 			);
 			path = ActionsModule;

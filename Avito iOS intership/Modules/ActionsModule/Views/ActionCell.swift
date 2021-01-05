@@ -35,6 +35,7 @@ class ActionCell: UICollectionViewCell {
         self.addSubview(cellPrice)
         self.addSubview(cellCheckmark)
         
+        // MARK: - Constraints for elements of cell
         cellImage.translatesAutoresizingMaskIntoConstraints = false
         cellImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         cellImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
@@ -47,7 +48,7 @@ class ActionCell: UICollectionViewCell {
         
         cellDescription.translatesAutoresizingMaskIntoConstraints = false
         cellDescription.leftAnchor.constraint(equalTo: cellTitle.leftAnchor).isActive = true
-        cellDescription.topAnchor.constraint(equalTo: cellTitle.bottomAnchor, constant: 10).isActive = true
+        cellDescription.topAnchor.constraint(equalTo: cellTitle.bottomAnchor, constant: 5).isActive = true
         cellDescription.rightAnchor.constraint(equalTo: cellTitle.rightAnchor).isActive = true
         
         cellPrice.translatesAutoresizingMaskIntoConstraints = false
@@ -65,4 +66,13 @@ class ActionCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configure(with action: Action) {
+        cellImage.image = UIImage(data: action.image)
+        cellTitle.text = action.title
+        cellDescription.text = action.listDescription
+        cellPrice.text = action.price
+        cellCheckmark.isHidden = !action.isSelected
+    }
+    
 }

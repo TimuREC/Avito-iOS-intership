@@ -18,6 +18,7 @@ protocol ActionsRouterProtocol: class {
 }
 
 protocol ActionsPresenterProtocol: class {
+    var interactor: ActionsInteractorProtocol! { get set }
     var router: ActionsRouterProtocol! { get set }
     func configureView()
     func closeButtonClicked()
@@ -25,8 +26,9 @@ protocol ActionsPresenterProtocol: class {
 }
 
 protocol ActionsViewProtocol: class {
-    var actionsHeader: String? { get set }
+    var presenter: ActionsPresenterProtocol! { get set }
     var actions: [Action] { get set }
+    var actionsHeader: String? { get set }
     var actionButtonStates: (String, String)? { get set }
     var selected: Int? { get set }
     func setupCloseButton()
